@@ -11,7 +11,7 @@ import math
 
 def main():
 
-    cap = cv2.VideoCapture(0)  # 0 for the default camera
+    cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)  # 0 for the default camera
     
     if not cap.isOpened():
         print("Error: Unable to open camera.")
