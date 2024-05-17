@@ -1,3 +1,6 @@
+"""
+pip3 install SpeechRecognition
+"""
 import speech_recognition as sr
 
 def recognize_speech():
