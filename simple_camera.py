@@ -1,8 +1,3 @@
-"""
-Title:        Simple Camera Code
-Author:       asaldivar
-"""
-
 import cv2
 
 def main():
@@ -14,6 +9,14 @@ def main():
         print("Error: Could not open camera.")
         return
 
+    # Set the resolution of the capture (optional)
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+
+    # Define the codec and create VideoWriter object if you want to save the video
+    # fourcc = cv2.VideoWriter_fourcc(*'XVID')
+    # out = cv2.VideoWriter('output.avi', fourcc, 20.0, (640, 480))
+
     while True:
         # Capture frame-by-frame
         ret, frame = cap.read()
@@ -23,15 +26,19 @@ def main():
             print("Error: Can't receive frame (stream end?). Exiting ...")
             break
 
-        # Display the resulting frame
-        cv2.imshow('Camera', frame)
+        # Perform operations on the frame here, if needed
 
-        # Exit loop if 'q' is pressed
+        # Uncomment below if you want to save the video
+        # out.write(frame)
+
+        # Exit the loop if 'q' is pressed
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-    # When everything done, release the capture
+    # Release the camera and the video writer if used
     cap.release()
+    # Uncomment below if you want to save the video
+    # out.release()
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
