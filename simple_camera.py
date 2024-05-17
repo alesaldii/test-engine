@@ -7,7 +7,7 @@ import cv2
 
 def main():
     # Open a connection to the first camera (index 0)
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(-1)
 
     # Check if the camera opened successfully
     if not cap.isOpened():
