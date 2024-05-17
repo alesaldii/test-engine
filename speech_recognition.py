@@ -1,4 +1,5 @@
 """
+sudo apt install python3-pip
 pip3 install SpeechRecognition
 """
 import speech_recognition as sr
