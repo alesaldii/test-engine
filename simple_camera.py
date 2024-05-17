@@ -1,3 +1,11 @@
+"""
+sudo apt install python3-pip
+pip3 install opencv-python
+
+lsusb
+ls -l /dev/video*
+sudo chmod 666 /dev/video0
+"""
 import cv2
 
 def main():
